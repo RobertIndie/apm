@@ -5,7 +5,7 @@
   "author": "Aaron Robert",
   "homepage": "https://github.com/RobertIndie/apm",
   "copyright": "Copyright 2018 Ambicour Aaron Robert",
-  "license": "GPL3.0",
+  "license": "GPL-3.0",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
