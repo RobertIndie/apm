@@ -30,6 +30,14 @@ export default {
   components: {
     MainChartExample
   },
+  created: function () {
+    this.$api
+      .get('/api/user/robert/profile')
+      .then(response => {
+        alert(JSON.stringify(response));
+      });
+    
+  },
   data: function () {
     return {
       selected: 'Month'
