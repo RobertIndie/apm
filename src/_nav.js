@@ -20,7 +20,7 @@ export default {
     },
     {
       name: '我的待办',
-      url: '/theme/colors',
+      url: '/worktable/todolist',
       icon: 'icon-doc'
     },
     {

@@ -58,6 +58,8 @@ const Register = () => import('@/views/pages/Register')
 const Users = () => import('@/views/users/Users')
 const User = () => import('@/views/users/User')
 
+const TodoList = () => import('@/views/worktable/TodoList');
+
 Vue.use(Router)
 
 export default new Router({
@@ -68,14 +70,24 @@ export default new Router({
     {
       path: '/',
       redirect: '/worktable',
-      name: 'Home',
+      name: '主页',
       component: DefaultContainer,
       children: [
         {
           path: 'worktable',
-          name: 'Worktable',
-          component: Worktable
+          name: '工作台',
+          component: Worktable,
+          children: [
+            {
+              path: 'todolist',
+              name: '待办事项',
+              component: TodoList
+            }
+          ]
         },
+
+
+
         {
           path: 'theme',
           redirect: '/theme/colors',
