@@ -1,6 +1,34 @@
 export default {
   items: [
     {
+      title: true,
+      name: '工作台',
+      class: '',
+      wrapper: {
+        element: '',
+        attributes: {}
+      }
+    },
+    {
+      name: '主页',
+      url: '/worktable',
+      icon: 'icon-cup',
+      badge: {
+        variant: 'primary',
+        text: ''
+      }
+    },
+    {
+      name: '我的待办',
+      url: '/theme/colors',
+      icon: 'icon-doc'
+    },
+    {
+      name: '我的已办',
+      url: '/theme/typography',
+      icon: 'icon-check'
+    },
+    {
       name: 'Dashboard',
       url: '/dashboard',
       icon: 'icon-speedometer',
