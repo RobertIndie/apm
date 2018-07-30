@@ -14,7 +14,11 @@ import axios from 'axios'
 // cssVars()
 
 Vue.use(BootstrapVue)
-Vue.prototype.$api = axios;
+Vue.prototype.api = axios;
+
+// for debug
+Vue.prototype.GLOBAL = {};
+Vue.prototype.GLOBAL.username = 'robert';
 
 /* eslint-disable no-new */
 new Vue({

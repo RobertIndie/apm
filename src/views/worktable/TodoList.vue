@@ -6,9 +6,9 @@
       </div>
       <b-card-body>
         <b-row>
-          <b-col v-for="item in todyTask" :key="item.id" sm="6" md="4">
+          <b-col v-for="item in otherTodoTask" :key="item._id" sm="6" md="4">
               <b-card :header="item.name">
-              {{item.name}}
+              {{item.description}}
               </b-card>
           </b-col>
         </b-row>
@@ -34,17 +34,35 @@ export default {
   components: {  },
   data: function () {
     return {
-      todyTask: [
-        {
-          id: 1,
-          name: 'task1'
-        },
-        {
-          id: 2,
-          name: 'task2'
-        }
+      todayTodoTask:[
+
+      ],
+      otherTodoTask:[
+
       ]
     }
+  },
+  mounted: function () {
+    var todayDate = new Date().toLocaleDateString().replace(/\//g,'.');
+    var todayTodoTasknextID = 0;
+    var otherTodoTasknextID = 0;
+    this.api.get(`/api/user/${this.GLOBAL.username}/todolist`).then(res => {
+      res.data.forEach(element => {
+        this.api.get(`/api/task/${element}`).then(res=>{
+          var task = res.data;
+          if(task.deadline===todayDate){
+            task._id = todayTodoTasknextID;
+            todayTodoTasknextID++;
+            this.todayTodoTask.push(task);
+          }
+          else{
+            task._id = otherTodoTasknextID;
+            otherTodoTasknextID++;
+            this.otherTodoTask.push(task);
+          }
+        });
+      });
+    });
   }
 }
 </script>
