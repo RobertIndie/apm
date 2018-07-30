@@ -11,7 +11,7 @@ export default {
     },
     {
       name: '主页',
-      url: '/worktable',
+      url: '/worktable/mainpage',
       icon: 'icon-cup',
       badge: {
         variant: 'primary',

@@ -60,9 +60,10 @@
 </template>
 
 <script>
+import ColorTheme from '../theme/ColorTheme'
 
 export default {
   name: 'todolist',
-  components: {  }
+  components: { ColorTheme }
 }
 </script>

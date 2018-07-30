@@ -70,14 +70,22 @@ export default new Router({
     {
       path: '/',
       redirect: '/worktable',
-      name: '主页',
+      name: 'APM',
       component: DefaultContainer,
       children: [
         {
           path: 'worktable',
+          redirect: 'worktable/mainpage',
           name: '工作台',
-          component: Worktable,
+          component: {
+            render (c) { return c('router-view')}
+          },
           children: [
+            {
+              path: 'mainpage',
+              name: '主页',
+              component: Worktable
+            },
             {
               path: 'todolist',
               name: '待办事项',
