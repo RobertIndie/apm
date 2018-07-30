@@ -8,11 +8,13 @@ import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
 
 // todo
 // cssVars()
 
 Vue.use(BootstrapVue)
+Vue.prototype.$api = axios;
 
 /* eslint-disable no-new */
 new Vue({
