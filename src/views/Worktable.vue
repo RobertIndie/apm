@@ -3,7 +3,7 @@
     <b-card>
       <b-row>
         <b-col sm="5">
-          <h4 id="traffic" class="card-title mb-0">需求规模贡献图</h4>
+          <h4 id="traffic" class="card-title mb-0">贡献图</h4>
           <div class="small text-muted">{{now}}</div>
         </b-col>
         <!-- <b-col sm="7" class="d-none d-md-block">
@@ -23,10 +23,10 @@
 </template>
 
 <script>
-import MainChartExample from './dashboard/MainChartExample'
+import MainChartExample from './worktable/ContributeChart'
 
 export default {
-  name: 'dashboard',
+  name: 'worktable',
   components: {
     MainChartExample
   },
