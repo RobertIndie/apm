@@ -79,18 +79,52 @@
         </b-card>
       </b-col>
     </b-row>
+    <b-row>
+      <b-col md="6">
+        <b-card>
+          <b-row>
+            <b-col>
+              <h4 class="text-center card-title">任务状态分布图</h4>
+            </b-col>
+          </b-row>
+          <b-row>
+            <b-col>
+              <status-distribute-chart></status-distribute-chart>
+            </b-col>
+          </b-row>
+        </b-card>
+      </b-col>
+      <b-col md="6">
+        <b-card>
+          <b-row>
+            <b-col>
+              <h4 class="text-center card-title">任务规模分布图</h4>
+            </b-col>
+          </b-row>
+          <b-row>
+            <b-col>
+              <size-distribute-chart></size-distribute-chart>
+            </b-col>
+          </b-row>
+        </b-card>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
 <script>
 import SizeBurnChart from './charts/SizeBurnChart';
 import CountBurnChart from './charts/CountBurnChart';
+import StatusDistributeChart from './charts/StatusDistributeChart';
+import SizeDistributeChart from './charts/SizeDistributeChart';
 
 export default {
   name: 'projectDashboard',
   components: {
     SizeBurnChart,
-    CountBurnChart
+    CountBurnChart,
+    StatusDistributeChart,
+    SizeDistributeChart
   },
   props: {
     iterationObj: Object
