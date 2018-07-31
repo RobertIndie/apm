@@ -6,17 +6,52 @@
       </div>
       <b-card-body>
         <b-row>
-          <b-col v-for="item in otherTodoTask" :key="item._id" sm="6" md="4">
-              <b-card :header="item.name">
-              {{item.description}}
-              </b-card>
+          <b-col v-for="item in otherTodoTask" :key="item._id">
+            <b-card >
+              <div slot="header">
+                {{item.name}}
+                <b-badge pill variant="danger" class="float-right">Planning</b-badge>
+              </div>
+              <b-row>
+                <b-col>
+                  <b-card>
+                    {{item.description}}
+                  </b-card>
+                </b-col>
+              </b-row>
+              <b-form>
+              <b-form-group
+                label="截止时间"
+                label-cols="4"
+                :horizontal="true">
+                <b-form-input plaintext type="text" value="今天"></b-form-input>
+              </b-form-group>
+              <b-form-group
+                label="优先级"
+                label-cols="4"
+                :horizontal="true">
+                <b-form-input plaintext type="text" value="高破天际"></b-form-input>
+              </b-form-group>      
+              <b-form-group
+                label="状态"
+                label-cols="4"
+                :horizontal="true">
+                <b-form-select id="state"
+                  :plain="true"
+                  @change="select()"
+                  :options="['规划中','实现中','已实现','已放弃']"
+                  value="规划中">
+                </b-form-select>
+              </b-form-group>         
+              </b-form>
+            </b-card>
           </b-col>
         </b-row>
       </b-card-body>
     </b-card>
     <b-card header-tag="header">
       <div slot="header">
-        <i class="icon-calendar"></i> 本次迭代
+        <i class="icon-calendar"></i> 其他
       </div>
       <b-card-body>
         <b-row>
@@ -38,7 +73,11 @@ export default {
 
       ],
       otherTodoTask:[
-
+        {
+          _id: 1000,
+          name: '测试任务',
+          description: '任务简介'
+        }
       ]
     }
   },
@@ -63,6 +102,11 @@ export default {
         });
       });
     });
+  },
+  methods: {
+    select () {
+      alert("select");
+    }
   }
 }
 </script>
