@@ -42,6 +42,21 @@ export default {
       url: '/project/dashboard',
       icon: 'icon-speedometer'
     },
+    {
+      name: '任务墙',
+      url: '/project/taskwall',
+      icon: 'icon-map'
+    },
+    {
+      name: '需求表',
+      url: '/project/tasklist',
+      icon: 'icon-list'
+    },
+    {
+      name: '迭代',
+      url: '/project/iteration',
+      icon: 'icon-reload'
+    },
 
 
 

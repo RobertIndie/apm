@@ -112,6 +112,21 @@ export default new Router({
               path: 'dashboard',
               name: '仪表板',
               component: ProjectDashboard
+            },
+            {
+              path: 'dashboard',
+              name: '任务墙',
+              component: ProjectDashboard
+            },
+            {
+              path: 'dashboard',
+              name: '需求表',
+              component: ProjectDashboard
+            },
+            {
+              path: 'dashboard',
+              name: '迭代',
+              component: ProjectDashboard
             }
           ]
         },
