@@ -5,13 +5,13 @@
         <i class="icon-calendar"></i> 今日到期
       </div>
       <b-card-body>
-        <b-row v-if="true">
-            <b-col v-for="item in otherTodoTask" :key="item._id">
-              <task :taskObj="item"></task>
-            </b-col>
+        <b-row v-if="todayTodoTask.length">
+          <b-col v-for="item in todayTodoTask" :key="item._id">
+            <task :taskObj="item"></task>
+          </b-col>
         </b-row>
         <b-row v-else>
-          <b-col>无</b-col>
+          <b-col class="text-center">无</b-col>
         </b-row>
       </b-card-body>
     </b-card>
@@ -20,8 +20,13 @@
         <i class="icon-calendar"></i> 其他
       </div>
       <b-card-body>
-        <b-row>
-
+        <b-row v-if="otherTodoTask.length">
+          <b-col v-for="item in otherTodoTask" :key="item._id">
+            <task :taskObj="item"></task>
+          </b-col>
+        </b-row>
+        <b-row v-else>
+          <b-col class="text-center">无</b-col>
         </b-row>
       </b-card-body>
     </b-card>
@@ -42,11 +47,7 @@ export default {
 
       ],
       otherTodoTask:[
-        {
-          _id: 1000,
-          name: '测试任务',
-          description: '任务简介'
-        }
+        
       ]
     }
   },
