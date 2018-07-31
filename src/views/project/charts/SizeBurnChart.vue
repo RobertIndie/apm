@@ -29,7 +29,7 @@ export default {
       },
       {
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
         tooltips: {
           enabled: false,
           custom: CustomTooltips,

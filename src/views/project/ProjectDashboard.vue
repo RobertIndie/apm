@@ -50,7 +50,16 @@
     <b-row>
       <b-col>
         <b-card>
-          <size-burn-chart></size-burn-chart>
+          <b-row>
+            <b-col>
+              <h4 id="traffic" class="text-center card-title">任务规模燃烧图</h4>
+            </b-col>
+          </b-row>
+          <b-row>
+            <b-col>
+              <size-burn-chart></size-burn-chart>
+            </b-col>
+          </b-row>
         </b-card>
       </b-col>
     </b-row>
