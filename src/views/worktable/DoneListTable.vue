@@ -1,12 +1,12 @@
 <template>
   <b-card :header="caption">
     <b-table :hover="hover" :striped="striped" :bordered="bordered" :small="small" :fixed="fixed" responsive="sm" :items="items" :fields="fields" :current-page="currentPage" :per-page="perPage">
-      <template slot="status" slot-scope="data">
+      <!-- <template slot="status" slot-scope="data">
         <b-badge :variant="getBadge(data.item.status)">{{data.item.status}}</b-badge>
-      </template>
+      </template> -->
     </b-table>
     <nav>
-      <b-pagination :total-rows="getRowCount(items)" :per-page="perPage" v-model="currentPage" prev-text="Prev" next-text="Next" hide-goto-end-buttons/>
+      <b-pagination :total-rows="getRowCount(items)" :per-page="perPage" v-model="currentPage" prev-text="上一页" next-text="下一页" hide-goto-end-buttons/>
     </nav>
   </b-card>
 </template>
@@ -57,40 +57,40 @@ export default {
   data: () => {
     return {
       items: shuffleArray([
-        {username: 'Samppa Nori', registered: '2012/01/01', role: 'Member', status: 'Active'},
-        {username: 'Estavan Lykos', registered: '2012/02/01', role: 'Staff', status: 'Banned'},
-        {username: 'Chetan Mohamed', registered: '2012/02/01', role: 'Admin', status: 'Inactive'},
-        {username: 'Derick Maximinus', registered: '2012/03/01', role: 'Member', status: 'Pending'},
-        {username: 'Friderik Dávid', registered: '2012/01/21', role: 'Staff', status: 'Active'},
-        {username: 'Yiorgos Avraamu', registered: '2012/01/01', role: 'Member', status: 'Active'},
-        {username: 'Avram Tarasios', registered: '2012/02/01', role: 'Staff', status: 'Banned'},
-        {username: 'Quintin Ed', registered: '2012/02/01', role: 'Admin', status: 'Inactive'},
-        {username: 'Enéas Kwadwo', registered: '2012/03/01', role: 'Member', status: 'Pending'},
-        {username: 'Agapetus Tadeáš', registered: '2012/01/21', role: 'Staff', status: 'Active'},
-        {username: 'Carwyn Fachtna', registered: '2012/01/01', role: 'Member', status: 'Active'},
-        {username: 'Nehemiah Tatius', registered: '2012/02/01', role: 'Staff', status: 'Banned'},
-        {username: 'Ebbe Gemariah', registered: '2012/02/01', role: 'Admin', status: 'Inactive'},
-        {username: 'Eustorgios Amulius', registered: '2012/03/01', role: 'Member', status: 'Pending'},
-        {username: 'Leopold Gáspár', registered: '2012/01/21', role: 'Staff', status: 'Active'},
-        {username: 'Pompeius René', registered: '2012/01/01', role: 'Member', status: 'Active'},
-        {username: 'Paĉjo Jadon', registered: '2012/02/01', role: 'Staff', status: 'Banned'},
-        {username: 'Micheal Mercurius', registered: '2012/02/01', role: 'Admin', status: 'Inactive'},
-        {username: 'Ganesha Dubhghall', registered: '2012/03/01', role: 'Member', status: 'Pending'},
-        {username: 'Hiroto Šimun', registered: '2012/01/21', role: 'Staff', status: 'Active'},
-        {username: 'Vishnu Serghei', registered: '2012/01/01', role: 'Member', status: 'Active'},
-        {username: 'Zbyněk Phoibos', registered: '2012/02/01', role: 'Staff', status: 'Banned'},
-        {username: 'Einar Randall', registered: '2012/02/01', role: 'Admin', status: 'Inactive'},
-        {username: 'Félix Troels', registered: '2012/03/21', role: 'Staff', status: 'Active'},
-        {username: 'Aulus Agmundr', registered: '2012/01/01', role: 'Member', status: 'Pending'}
+        {'任务': 'Samppa Nori', '完成时间': '2012/01/01', '迭代': 'Member', status: 'Active'},
+        {'任务': 'Estavan Lykos', '完成时间': '2012/02/01', '迭代': 'Staff', status: 'Banned'},
+        {'任务': 'Chetan Mohamed', '完成时间': '2012/02/01', '迭代': 'Admin', status: 'Inactive'},
+        {'任务': 'Derick Maximinus', '完成时间': '2012/03/01', '迭代': 'Member', status: 'Pending'},
+        {'任务': 'Friderik Dávid', '完成时间': '2012/01/21', '迭代': 'Staff', status: 'Active'},
+        {'任务': 'Yiorgos Avraamu', '完成时间': '2012/01/01', '迭代': 'Member', status: 'Active'},
+        {'任务': 'Avram Tarasios', '完成时间': '2012/02/01', '迭代': 'Staff', status: 'Banned'},
+        {'任务': 'Quintin Ed', '完成时间': '2012/02/01', '迭代': 'Admin', status: 'Inactive'},
+        {'任务': 'Enéas Kwadwo', '完成时间': '2012/03/01', '迭代': 'Member', status: 'Pending'},
+        {'任务': 'Agapetus Tadeáš', '完成时间': '2012/01/21', '迭代': 'Staff', status: 'Active'},
+        {'任务': 'Carwyn Fachtna', '完成时间': '2012/01/01', '迭代': 'Member', status: 'Active'},
+        {'任务': 'Nehemiah Tatius', '完成时间': '2012/02/01', '迭代': 'Staff', status: 'Banned'},
+        {'任务': 'Ebbe Gemariah', '完成时间': '2012/02/01', '迭代': 'Admin', status: 'Inactive'},
+        {'任务': 'Eustorgios Amulius', '完成时间': '2012/03/01', '迭代': 'Member', status: 'Pending'},
+        {'任务': 'Leopold Gáspár', '完成时间': '2012/01/21', '迭代': 'Staff', status: 'Active'},
+        {'任务': 'Pompeius René', '完成时间': '2012/01/01', '迭代': 'Member', status: 'Active'},
+        {'任务': 'Paĉjo Jadon', '完成时间': '2012/02/01', '迭代': 'Staff', status: 'Banned'},
+        {'任务': 'Micheal Mercurius', '完成时间': '2012/02/01', '迭代': 'Admin', status: 'Inactive'},
+        {'任务': 'Ganesha Dubhghall', '完成时间': '2012/03/01', '迭代': 'Member', status: 'Pending'},
+        {'任务': 'Hiroto Šimun', '完成时间': '2012/01/21', '迭代': 'Staff', status: 'Active'},
+        {'任务': 'Vishnu Serghei', '完成时间': '2012/01/01', '迭代': 'Member', status: 'Active'},
+        {'任务': 'Zbyněk Phoibos', '完成时间': '2012/02/01', '迭代': 'Staff', status: 'Banned'},
+        {'任务': 'Einar Randall', '完成时间': '2012/02/01', '迭代': 'Admin', status: 'Inactive'},
+        {'任务': 'Félix Troels', '完成时间': '2012/03/21', '迭代': 'Staff', status: 'Active'},
+        {'任务': 'Aulus Agmundr', '完成时间': '2012/01/01', '迭代': 'Member', status: 'Pending'}
       ]),
       fields: [
-        {key: 'username'},
-        {key: 'registered'},
-        {key: 'role'},
+        {key: '任务'},
+        {key: '迭代'},
+        {key: '完成时间'},
         {key: 'status'}
       ],
       currentPage: 1,
-      perPage: 5,
+      perPage: 20,
       totalRows: 0
     }
   },
