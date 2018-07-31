@@ -1,10 +1,10 @@
 <template>
   <div class="animated fadeIn">
-    <b-low>
+    <b-row>
       <b-col>
         <done-list-table striped caption="<i class='fa fa-align-justify'></i> 已完成任务"></done-list-table>
       </b-col>
-    </b-low>
+    </b-row>
   </div>
 </template>
 
