@@ -59,6 +59,7 @@ const Users = () => import('@/views/users/Users')
 const User = () => import('@/views/users/User')
 
 const TodoList = () => import('@/views/worktable/TodoList');
+const DoneList = () => import('@/views/worktable/DoneList');
 
 Vue.use(Router)
 
@@ -90,6 +91,11 @@ export default new Router({
               path: 'todolist',
               name: '待办事项',
               component: TodoList
+            },
+            {
+              path: 'donelist',
+              name: '已办事项',
+              component: DoneList
             }
           ]
         },

@@ -25,7 +25,7 @@ export default {
     },
     {
       name: '我的已办',
-      url: '/theme/typography',
+      url: '/worktable/donelist',
       icon: 'icon-check'
     },
     {
