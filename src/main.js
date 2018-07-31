@@ -19,6 +19,7 @@ Vue.prototype.api = axios;
 // for debug
 Vue.prototype.GLOBAL = {};
 Vue.prototype.GLOBAL.username = 'robert';
+Vue.prototype.GLOBAL.projectID = 'testProjectID';
 
 /* eslint-disable no-new */
 new Vue({
