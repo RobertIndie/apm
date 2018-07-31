@@ -16,14 +16,15 @@ export default {
         labels: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
         datasets: [
           {
-            label: 'Data One',
-            backgroundColor: hexToRgba('#E46651', 90),
-            data: [30, 39, 10, 50, 30, 70, 35]
+            label: '基准线',
+            backgroundColor: hexToRgba('#20a8d8',0),
+            borderColor: '#20a8d8',
+            data: [42, 35, 28, 21, 14, 7, 0]
           },
           {
-            label: 'Data Two',
-            backgroundColor: hexToRgba('#00D8FF', 90),
-            data: [39, 80, 40, 35, 40, 20, 45]
+            label: '规模',
+            backgroundColor: hexToRgba('#E46651', 90),
+            data: [42, 35, 25, 15, 13, 5, 0]
           }
         ]
       },
@@ -41,6 +42,9 @@ export default {
               return { backgroundColor: chart.data.datasets[tooltipItem.datasetIndex].backgroundColor }
             }
           }
+        },
+        legend: {
+          display: false
         }
       }
     )
