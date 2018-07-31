@@ -47,15 +47,23 @@
         </b-card>
       </b-col>
     </b-row>
+    <b-row>
+      <b-col>
+        <b-card>
+          <size-burn-chart></size-burn-chart>
+        </b-card>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
 <script>
+import SizeBurnChart from './charts/SizeBurnChart';
 
 export default {
   name: 'projectDashboard',
   components: {
-    
+    SizeBurnChart
   },
   props: {
     iterationObj: Object

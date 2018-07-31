@@ -133,6 +133,7 @@ export default new Router({
 
 
 
+        
         {
           path: 'theme',
           redirect: '/theme/colors',
