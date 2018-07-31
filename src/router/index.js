@@ -60,6 +60,7 @@ const User = () => import('@/views/users/User')
 
 const TodoList = () => import('@/views/worktable/TodoList');
 const DoneList = () => import('@/views/worktable/DoneList');
+const ProjectDashboard = () => import('@/views/project/ProjectDashboard');
 
 Vue.use(Router)
 
@@ -96,6 +97,21 @@ export default new Router({
               path: 'donelist',
               name: '已办事项',
               component: DoneList
+            }
+          ]
+        },
+        {
+          path: 'project',
+          redirect: 'project/dashboard',
+          name: '项目',
+          component: {
+            render (c) { return c('router-view')}
+          },
+          children: [
+            {
+              path: 'dashboard',
+              name: '仪表板',
+              component: ProjectDashboard
             }
           ]
         },

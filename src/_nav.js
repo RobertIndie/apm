@@ -29,6 +29,23 @@ export default {
       icon: 'icon-check'
     },
     {
+      title: true,
+      name: '项目',
+      class: '',
+      wrapper: {
+        element: '',
+        attributes: {}
+      }
+    },
+    {
+      name: '仪表板',
+      url: '/project/dashboard',
+      icon: 'icon-speedometer'
+    },
+
+
+
+    {
       name: 'Dashboard',
       url: '/dashboard',
       icon: 'icon-speedometer',
