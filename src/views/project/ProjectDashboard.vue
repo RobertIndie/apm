@@ -52,7 +52,7 @@
         <b-card>
           <b-row>
             <b-col>
-              <h4 id="traffic" class="text-center card-title">任务规模燃烧图</h4>
+              <h4 class="text-center card-title">任务规模燃烧图</h4>
             </b-col>
           </b-row>
           <b-row>
@@ -63,16 +63,34 @@
         </b-card>
       </b-col>
     </b-row>
+    <b-row>
+      <b-col>
+        <b-card>
+          <b-row>
+            <b-col>
+              <h4 class="text-center card-title">任务个数燃烧图</h4>
+            </b-col>
+          </b-row>
+          <b-row>
+            <b-col>
+              <count-burn-chart></count-burn-chart>
+            </b-col>
+          </b-row>
+        </b-card>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
 <script>
 import SizeBurnChart from './charts/SizeBurnChart';
+import CountBurnChart from './charts/CountBurnChart';
 
 export default {
   name: 'projectDashboard',
   components: {
-    SizeBurnChart
+    SizeBurnChart,
+    CountBurnChart
   },
   props: {
     iterationObj: Object
