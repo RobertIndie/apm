@@ -24,7 +24,7 @@ export default {
           {
             label: '规模',
             backgroundColor: hexToRgba('#E46651', 90),
-            data: [42, 35, 25, 15, 13, 5, 0]
+            data: [42, 34, 20, 16, 12, 6, 0]
           }
         ]
       },
