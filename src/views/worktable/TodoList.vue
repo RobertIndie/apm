@@ -7,44 +7,7 @@
       <b-card-body>
         <b-row v-if="true">
             <b-col v-for="item in otherTodoTask" :key="item._id">
-              <b-card >
-                <div slot="header">
-                  {{item.name}}
-                  <b-badge pill variant="danger" class="float-right">Planning</b-badge>
-                </div>
-                <b-row>
-                  <b-col>
-                    <b-card>
-                      {{item.description}}
-                    </b-card>
-                  </b-col>
-                </b-row>
-                <b-form>
-                <b-form-group
-                  label="截止时间"
-                  label-cols="4"
-                  :horizontal="true">
-                  <b-form-input plaintext type="text" value="今天"></b-form-input>
-                </b-form-group>
-                <b-form-group
-                  label="优先级"
-                  label-cols="4"
-                  :horizontal="true">
-                  <b-form-input plaintext type="text" value="高破天际"></b-form-input>
-                </b-form-group>      
-                <b-form-group
-                  label="状态"
-                  label-cols="4"
-                  :horizontal="true">
-                  <b-form-select id="state"
-                    :plain="true"
-                    @change="select()"
-                    :options="['规划中','实现中','已实现','已放弃']"
-                    value="规划中">
-                  </b-form-select>
-                </b-form-group>         
-                </b-form>
-              </b-card>
+              <task :taskObj="item"></task>
             </b-col>
         </b-row>
         <b-row v-else>
@@ -66,10 +29,13 @@
 </template>
 
 <script>
+import Task from './Task'
 
 export default {
   name: 'todolist',
-  components: {  },
+  components: {  
+    Task
+  },
   data: function () {
     return {
       todayTodoTask:[
