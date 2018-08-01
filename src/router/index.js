@@ -61,7 +61,7 @@ const User = () => import('@/views/users/User')
 const TodoList = () => import('@/views/worktable/TodoList');
 const DoneList = () => import('@/views/worktable/DoneList');
 const ProjectDashboard = () => import('@/views/project/ProjectDashboard');
-const Taskwall = () => import('@/views/project/Taskwall');
+const TaskList = () => import('@/views/project/TaskList');
 
 Vue.use(Router)
 
@@ -115,14 +115,9 @@ export default new Router({
               component: ProjectDashboard
             },
             {
-              path: 'taskwall',
-              name: '任务墙',
-              component: Taskwall
-            },
-            {
-              path: 'dashboard',
-              name: '需求表',
-              component: ProjectDashboard
+              path: 'tasklist',
+              name: '任务表',
+              component: TaskList
             },
             {
               path: 'dashboard',

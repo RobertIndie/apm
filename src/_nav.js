@@ -43,12 +43,7 @@ export default {
       icon: 'icon-speedometer'
     },
     {
-      name: '任务墙',
-      url: '/project/taskwall',
-      icon: 'icon-map'
-    },
-    {
-      name: '需求表',
+      name: '任务表',
       url: '/project/tasklist',
       icon: 'icon-list'
     },
