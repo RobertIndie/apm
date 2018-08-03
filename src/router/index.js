@@ -62,6 +62,7 @@ const TodoList = () => import('@/views/worktable/TodoList');
 const DoneList = () => import('@/views/worktable/DoneList');
 const ProjectDashboard = () => import('@/views/project/ProjectDashboard');
 const TaskList = () => import('@/views/project/TaskList');
+const Iteration = () => import('@/views/project/Iteration');
 
 Vue.use(Router)
 
@@ -120,9 +121,9 @@ export default new Router({
               component: TaskList
             },
             {
-              path: 'dashboard',
+              path: 'iteration',
               name: '迭代',
-              component: ProjectDashboard
+              component: Iteration
             }
           ]
         },
