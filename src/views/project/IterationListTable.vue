@@ -27,7 +27,7 @@ const shuffleArray = (array) => {
 }
 
 export default {
-  name: 'taskListTable',
+  name: 'iterationListTable',
   props: {
     caption: {
       type: String,
@@ -56,7 +56,7 @@ export default {
   },
   data: () => {
     return {
-      //name developerList status priority deadline
+      //name startDate endDate status
       items: shuffleArray([
         {'任务': 'Samppa Nori', '完成时间': '2012/01/01', '迭代': 'Member', status: 'Active'},
         {'任务': 'Estavan Lykos', '完成时间': '2012/02/01', '迭代': 'Staff', status: 'Banned'},
